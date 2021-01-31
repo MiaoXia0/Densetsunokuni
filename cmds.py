@@ -38,7 +38,10 @@ async def cmd_menu(bot: HoshinoBot, ev: CQEvent, args):
 
 @reg_cmd('创建角色')
 async def cmd_create(bot: HoshinoBot, ev: CQEvent, args):
-    name = args[0]
+    try:
+        name = args[0]
+    except IndexError:
+        name = ''
     user_id = ev['user_id']
     if name == '':
         await bot.send(ev, '请输入//创建角色 角色名')
