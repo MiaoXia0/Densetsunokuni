@@ -3,14 +3,27 @@ from hoshino import Service
 from hoshino.typing import *
 import os
 
+try:
+    import ujson as json
+except ImportError:
+    import json
+
 sv = Service(name='Densetsunokuni')
 data_dir = os.path.dirname(__file__) + '/data'
 user_dir = data_dir + '/users'
+equip_dir = data_dir + '/equipments'
 if not os.path.exists(data_dir):
     os.mkdir(data_dir)
 if not os.path.exists(user_dir):
     os.mkdir(user_dir)
-
+try:
+    equipments = json.load(open(equip_dir + '/equipments.json', 'r'))
+except IOError:
+    equipments = {{'id': 0, 'name': '无', 'atk': 0, 'def': 0, 'hp': 0, 'mp': 0, 'mov': 0},
+                  {'id': 1, 'name': '普通的衣物', 'atk': 0, 'def': 5, 'hp': 10, 'mp': 0, 'mov': 0},
+                  {'id': 2, 'name': '普通的裤子', 'atk': 0, 'def': 3, 'hp': 5, 'mp': 0, 'mov': 0},
+                  {'id': 3, 'name': '普通的鞋子', 'atk': 0, 'def': 2, 'hp': 3, 'mp': 0, 'mov': 10}}
+    json.dump(equipments, open(equip_dir + '/equipments.json', 'w'))
 cmds: Dict[str, Callable] = {}
 
 

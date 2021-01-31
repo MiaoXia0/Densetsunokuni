@@ -45,6 +45,20 @@ async def cmd_create(bot: HoshinoBot, ev: CQEvent, args):
     if isUserExist(user_id):
         await bot.send(ev, '您已创建角色！')
         return
-    new_user = {'name': name, 'level': 0, 'exp': 0}
+    new_user = {'name': name,
+                'level': 0,
+                'exp': 0,
+                'hp': 100,
+                'mp': 20,
+                'atk': 10,
+                'def': 0,
+                'mov': 100,
+                'equipments': {'head': 0,
+                               'body': 1,
+                               'hand': 0,
+                               'leg': 2,
+                               'foot': 3
+                               }
+                }
     json.dump(new_user, open(user_dir + f'/{user_id}.json', 'w'))
     await bot.send(ev, f'角色{name}已创建，欢迎来到传说的国度！')
