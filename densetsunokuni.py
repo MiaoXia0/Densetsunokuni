@@ -25,6 +25,7 @@ async def exec_cmd(bot: HoshinoBot, ev: CQEvent):
         func = cmds[cmd]
         await func(bot, ev, args)
     elif cmd != '':
+        sv.logger('指令列表' + str(cmds))
         await bot.send(ev, '未知指令\n输入//说明或//help查看说明')
 
 
