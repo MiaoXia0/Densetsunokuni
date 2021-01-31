@@ -16,9 +16,11 @@ if not os.path.exists(data_dir):
     os.mkdir(data_dir)
 if not os.path.exists(user_dir):
     os.mkdir(user_dir)
+if not os.path.exists(equip_dir):
+    os.mkdir(equip_dir)
 try:
     equipments = json.load(open(equip_dir + '/equipments.json', 'r'))
-except FileNotFoundError:
+except IOError:
     equipments = [
         {'id': 0, 'name': '无', 'atk': 0, 'def': 0, 'hp': 0, 'mp': 0, 'mov': 0},
                   {'id': 1, 'name': '普通的衣物', 'atk': 0, 'def': 5, 'hp': 10, 'mp': 0, 'mov': 0},
