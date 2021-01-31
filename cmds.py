@@ -50,5 +50,5 @@ async def cmd_create(bot: HoshinoBot, ev: CQEvent, args):
         await bot.send(ev, '您已创建角色！')
         return
     new_user = {'name': name, 'level': 0, 'exp': 0}
-    json.dump(open(user_dir + f'{user_id}.json', 'w'))
+    json.dump(str(user_id), open(user_dir + f'/{user_id}.json', 'w'))
     await bot.send(ev, f'角色{name}已创建，欢迎来到传说的国度！')
