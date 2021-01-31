@@ -3,7 +3,7 @@ from hoshino import Service
 from hoshino.typing import *
 import os
 
-sv = Service(name='densetsunokuni')
+sv = Service(name='Densetsunokuni')
 data_dir = os.path.dirname(__file__) + '/data'
 user_dir = data_dir + '/users'
 if not os.path.exists(data_dir):
