@@ -1,5 +1,5 @@
 from hoshino.typing import *
-from .densetsunokuni import *
+from .densetsunokuni import reg_cmd, user_dir, data_dir
 from .texts import *
 try:
     import ujson as json
