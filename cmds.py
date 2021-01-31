@@ -1,5 +1,5 @@
 from hoshino.typing import *
-from .__init__ import *
+from .densetsunokuni import *
 from .texts import *
 try:
     import ujson as json
