@@ -9,6 +9,10 @@ except ImportError:
 
 data_dir = os.path.dirname(__file__) + '/data'
 user_dir = data_dir + '/users'
+if not os.path.exists(data_dir):
+    os.mkdir(data_dir)
+if not os.path.exists(user_dir):
+    os.mkdir(user_dir)
 
 
 def isUserExist(QQ: str):

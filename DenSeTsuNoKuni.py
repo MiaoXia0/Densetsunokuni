@@ -1,6 +1,7 @@
 from typing import List, Callable
 from hoshino import Service
 from hoshino.typing import *
+import os
 
 sv = Service(name='densetsunokuni')
 
