@@ -42,7 +42,7 @@ def reg_cmd(names) -> Callable:
                 sv.logger.warning('命名冲突')
             else:
                 cmds[name] = func
-                sv.logger.info(f'指令{name}已注册')
+                sv.logger.info(f'[Densetsunokuni]指令{name}已注册')
         return func
 
     return reg
