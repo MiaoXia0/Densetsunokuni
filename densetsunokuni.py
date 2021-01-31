@@ -1,18 +1,17 @@
 from typing import List, Callable
 from hoshino import Service
 from hoshino.typing import *
-import cmd
 import os
 
 sv = Service(name='densetsunokuni')
-
-cmds: Dict[str, Callable] = {}
 data_dir = os.path.dirname(__file__) + '/data'
 user_dir = data_dir + '/users'
 if not os.path.exists(data_dir):
     os.mkdir(data_dir)
 if not os.path.exists(user_dir):
     os.mkdir(user_dir)
+
+cmds: Dict[str, Callable] = {}
 
 
 @sv.on_prefix('//')  # 指令执行
