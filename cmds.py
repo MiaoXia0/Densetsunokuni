@@ -1,18 +1,10 @@
 from hoshino.typing import *
-from .DenSeTsuNoKuni import reg_cmd
+from .__init__ import *
 from .texts import *
-import os
 try:
     import ujson as json
 except ImportError:
     import json
-
-data_dir = os.path.dirname(__file__) + '/data'
-user_dir = data_dir + '/users'
-if not os.path.exists(data_dir):
-    os.mkdir(data_dir)
-if not os.path.exists(user_dir):
-    os.mkdir(user_dir)
 
 
 def isUserExist(QQ: str):
