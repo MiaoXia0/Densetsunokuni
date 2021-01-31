@@ -1,5 +1,5 @@
 from hoshino.typing import *
-from .Densetsunokuni import reg_cmd, user_dir, data_dir
+from .Densetsunokuni import reg_cmd, user_dir, data_dir, sv
 from .texts import *
 try:
     import ujson as json
@@ -14,6 +14,9 @@ def isUserExist(QQ: str):
         return False
     else:
         return True
+
+
+sv.logger.info('指令加载')
 
 
 @reg_cmd('测试输出')
