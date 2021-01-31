@@ -13,6 +13,7 @@ if not os.path.exists(data_dir):
 if not os.path.exists(user_dir):
     os.mkdir(user_dir)
 
+
 @sv.on_prefix('//')  # 指令执行
 async def exec_cmd(bot: HoshinoBot, ev: CQEvent):
     # if ev['message_type'] != 'group':
