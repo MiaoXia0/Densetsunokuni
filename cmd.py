@@ -16,9 +16,6 @@ def isUserExist(QQ: str):
         return True
 
 
-sv.logger.info('指令加载')
-
-
 @reg_cmd('测试输出')
 async def cmd_test(bot: HoshinoBot, ev: CQEvent, args):
     for i in args:
