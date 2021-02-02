@@ -1,6 +1,8 @@
 from hoshino.typing import *
-from .Densetsunokuni import reg_cmd, user_dir, data_dir, sv
+from .Densetsunokuni import *
 from .texts import *
+import os
+
 try:
     import ujson as json
 except ImportError:
@@ -62,3 +64,14 @@ async def cmd_create(bot: HoshinoBot, ev: CQEvent, args):
                 }
     json.dump(new_user, open(user_dir + f'/{user_id}.json', 'w'))
     await bot.send(ev, f'角色{name}已创建，欢迎来到传说的国度！')
+
+
+@reg_cmd('删除角色')
+async def cmd_delete(bot: HoshinoBot, ev: CQEvent, args):
+    user_id = ev['user_id']
+    if not isUserExist(user_id):
+        await bot.send(ev, '您未创建角色！')
+        return
+    else:
+        os.remove(user_dir + f'/{user_id}.json')
+        await bot.send(ev, '角色已删除！')
